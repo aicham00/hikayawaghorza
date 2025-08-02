@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>طلب منتج | حكاية وغرزة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>🧾 نموذج الطلب</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="store.html">المتجر</a></li>
+        <li><a href="videos.html">الفيديوهات</a></li>
+        <li><a href="contact.html">تواصل</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h2>اطلبي منتجك بسهولة</h2>
+      <form action="#" method="POST">
+        <label for="fullName">الاسم الكامل:</label>
+        <input type="text" id="fullName" name="fullName" required>
+
+        <label for="phone">رقم الهاتف:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="wilaya">الولاية:</label>
+        <select id="wilaya" name="wilaya" required>
+          <option disabled selected>اختاري ولايتك</option>
+          <option>01 - أدرار</option>
+          <option>02 - الشلف</option>
+          <option>03 - الأغواط</option>
+          <option>04 - أم البواقي</option>
+          <!-- ... -->
+          <option>58 - المغير</option>
+        </select>
+
+        <label for="delivery">طريقة التوصيل:</label>
+        <select id="delivery" name="delivery" required>
+          <option disabled selected>اختاري طريقة التوصيل</option>
+          <option>إلى باب المنزل</option>
+          <option>إلى مكتب التوصيل</option>
+        </select>
+
+        <label for="product">اسم المنتج (اختياري):</label>
+        <input type="text" id="product" name="product" placeholder="مثلاً: حقيبة مطرزة صغيرة">
+
+        <button type="submit" class="btn">أرسل الطلب</button>
+      </form>
+    </section>
+  <footer>
+    <p>© 2025 حكاية وغرزة | جميع الحقوق محفوظة</p>
+  </footer>
+ <script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const productName = urlParams.get('product');
+  if (productName) {
+    const input = document.getElementById('product');
+    input.value = productName;
+    input.readOnly = true; // لمنع التعديل
+  }
+</script>
+  </main>
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const productName = urlParams.get('product');
+  const input = document.getElementById('product');
+
+  if (productName) {
+    input.value = productName;
+    input.readOnly = true;
+
+    const previewDiv = document.getElementById('product-preview');
+
+    // خريطة بين أسماء المنتجات والصور
+    const productImages = {
+    "حقيبة يد 1" : "images/bag1.jpg",
+      "وسادة ديكورية": "images/cushion1.jpg",
+      "دمية قماشية": "images/toy1.jpg"
+      // أضيفي المزيد هنا حسب الحاجة
+    };
+
+    const imageSrc = productImages[productName];
+
+    if (imageSrc) {
+      const img = document.createElement("img");
+      img.src = imageSrc;
+      img.alt = productName;
+      img.style.maxWidth = "90%";
+      img.style.borderRadius = "12px";
+      img.style.boxShadow = "0 4px 10px rgba(0,0,0,0.1)";
+      previewDiv.appendChild(img);
+    } else {
+      previewDiv.innerHTML = `<p style="color: gray;">الصورة غير متوفرة حاليًا لهذا المنتج.</p>`;
+    }
+  }
+</script>
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const productName = urlParams.get('product');
+  const input = document.getElementById('product');
+
+  if (productName) {
+    input.value = productName;
+    input.readOnly = true;
+  }
+</script>
+
+</body>
+</html>
