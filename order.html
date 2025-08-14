@@ -1,16 +1,154 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>طلب منتج | حكاية وغرزة</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>طلب حقيبة كروشيه | حكاية وغرزة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #fff8f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #fff0f4;
+      padding: 20px 30px;
+      border-bottom: 2px solid #f7d5dc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #a33659;
+      font-size: 1.5em;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #a33659;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .product-image {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .product-image img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 12px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #a33659;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 6px;
+      color: #555;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      font-size: 1em;
+    }
+
+    .price {
+      text-align: center;
+      font-weight: bold;
+      color: #a33659;
+      margin: 10px 0;
+      font-size: 1.1em;
+    }
+
+    .color-options {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .color-swatch {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: border 0.2s;
+    }
+
+    .color-swatch.selected {
+      border: 2px solid #a33659;
+    }
+
+    button {
+      background-color: #d17b88;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #c05f75;
+    }
+
+    #order-feedback {
+      text-align: center;
+      font-size: 0.95em;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 10px;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <header>
-    <h1>🧾 نموذج الطلب</h1>
+    <h1>أطلبي منتجك بسهولة</h1>
     <nav>
       <ul>
         <li><a href="index.html">الرئيسية</a></li>
@@ -20,96 +158,124 @@
       </ul>
     </nav>
   </header>
+  <div class="product-image">
+    <img src="images/sac.jpg" alt="حقيبة كانفا">
+  </div>
 
-  <main>
-    <section class="form-section">
-      <h2>اطلبي منتجك بسهولة</h2>
-      <form action="#" method="POST">
-        <label for="fullName">الاسم الكامل:</label>
-        <input type="text" id="fullName" name="fullName" required>
+    <h2>طلب حقيبة كروشيه</h2>
 
-        <label for="phone">رقم الهاتف:</label>
-        <input type="tel" id="phone" name="phone" required>
+    <p class="price">السعر: 2500 دج</p>
 
-        <label for="wilaya">الولاية:</label>
-        <select id="wilaya" name="wilaya" required>
-          <option disabled selected>اختاري ولايتك</option>
-          <option>01 - أدرار</option>
-          <option>02 - الشلف</option>
-          <option>03 - الأغواط</option>
-          <option>04 - أم البواقي</option>
-          <!-- ... -->
-          <option>58 - المغير</option>
-        </select>
+    <label>اختاري اللون:</label>
+    <div class="color-options" id="colorOptions">
+      <span class="color-swatch" data-color="زهري" style="background-color: #f8c8dc;"></span>
+      <span class="color-swatch" data-color="سماوي" style="background-color: #c4e1e1;"></span>
+      <span class="color-swatch" data-color="أصفر" style="background-color: #ffe5a3;"></span>
+      <span class="color-swatch" data-color="بنفسجي" style="background-color: #c2a3ff;"></span>
+    </div>
+    <input type="hidden" id="selectedColor" value="">
 
-        <label for="delivery">طريقة التوصيل:</label>
-        <select id="delivery" name="delivery" required>
-          <option disabled selected>اختاري طريقة التوصيل</option>
-          <option>إلى باب المنزل</option>
-          <option>إلى مكتب التوصيل</option>
-        </select>
+    <form id="orderForm">
+      <label for="name">الاسم الكامل:</label>
+      <input type="text" id="name" required>
 
-        <label for="product">اسم المنتج (اختياري):</label>
-        <input type="text" id="product" name="product" placeholder="مثلاً: حقيبة مطرزة صغيرة">
+      <label for="phone">رقم الهاتف:</label>
+      <input type="tel" id="phone" required>
 
-        <button type="submit" class="btn">أرسل الطلب</button>
-      </form>
-    </section>
-  <footer>
-    <p>© 2025 حكاية وغرزة | جميع الحقوق محفوظة</p>
-  </footer>
- <script>
-  const urlParams = new URLSearchParams(window.location.search);
-  const productName = urlParams.get('product');
-  if (productName) {
-    const input = document.getElementById('product');
-    input.value = productName;
-    input.readOnly = true; // لمنع التعديل
-  }
-</script>
-  </main>
-<script>
-  const urlParams = new URLSearchParams(window.location.search);
-  const productName = urlParams.get('product');
-  const input = document.getElementById('product');
+      <label for="wilaya">الولاية:</label>
+      <input type="text" id="wilaya" required>
 
-  if (productName) {
-    input.value = productName;
-    input.readOnly = true;
+      <button type="submit">إرسال الطلب</button>
+    </form>
 
-    const previewDiv = document.getElementById('product-preview');
+    <p id="order-feedback"></p>
+  </div>
 
-    // خريطة بين أسماء المنتجات والصور
-    const productImages = {
-    "حقيبة يد 1" : "images/bag1.jpg",
-      "وسادة ديكورية": "images/cushion1.jpg",
-      "دمية قماشية": "images/toy1.jpg"
-      // أضيفي المزيد هنا حسب الحاجة
+  <!-- ✅ Firebase + JS -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyD9IV4OY10BqRRmW5ZetF-cNTF_8wZsEF4",
+      authDomain: "taleandstitch.firebaseapp.com",
+      projectId: "taleandstitch",
+      storageBucket: "taleandstitch.appspot.com",
+      messagingSenderId: "589312061871",
+      appId: "1:589312061871:web:82acc6564ce59973107f5a"
     };
 
-    const imageSrc = productImages[productName];
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
-    if (imageSrc) {
-      const img = document.createElement("img");
-      img.src = imageSrc;
-      img.alt = productName;
-      img.style.maxWidth = "90%";
-      img.style.borderRadius = "12px";
-      img.style.boxShadow = "0 4px 10px rgba(0,0,0,0.1)";
-      previewDiv.appendChild(img);
-    } else {
-      previewDiv.innerHTML = `<p style="color: gray;">الصورة غير متوفرة حاليًا لهذا المنتج.</p>`;
-    }
-  }
-</script>
-<script>
+    const swatches = document.querySelectorAll(".color-swatch");
+    const selectedColorInput = document.getElementById("selectedColor");
+    const feedback = document.getElementById("order-feedback");
+
+    swatches.forEach(swatch => {
+      swatch.addEventListener("click", () => {
+        swatches.forEach(s => s.classList.remove("selected"));
+        swatch.classList.add("selected");
+        selectedColorInput.value = swatch.getAttribute("data-color");
+        feedback.style.color = "#333";
+        feedback.textContent = `💡 تم اختيار اللون: ${selectedColorInput.value}`;
+      });
+    });
+
+    const orderForm = document.getElementById("orderForm");
+
+    orderForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const image = imageName || "images/sac.jpg";
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const wilaya = document.getElementById("wilaya").value;
+      const color = selectedColorInput.value;
+
+      if (!color) {
+        feedback.style.color = "red";
+        feedback.textContent = "❗يرجى اختيار لون قبل إرسال الطلب.";
+        return;
+      }
+
+      try {
+        await addDoc(collection(db, "orders"), {
+          name,
+          phone,
+          wilaya,
+          product: `حقيبة كروشيه – اللون ${color}`,
+          image: image,
+          createdAt: serverTimestamp()
+        });
+        feedback.style.color = "green";
+        feedback.textContent = "✅ تم إرسال الطلب بنجاح!";
+        orderForm.reset();
+        selectedColorInput.value = "";
+        swatches.forEach(s => s.classList.remove("selected"));
+      } catch (error) {
+        feedback.style.color = "red";
+        feedback.textContent = "❌ حدث خطأ أثناء إرسال الطلب.";
+        console.error(error);
+      }
+    });
+  </script>
+  <script>
+  // قراءة بيانات المنتج من عنوان الرابط
   const urlParams = new URLSearchParams(window.location.search);
-  const productName = urlParams.get('product');
-  const input = document.getElementById('product');
+  const productType = urlParams.get("type");
+  const imageName = urlParams.get("image");
 
-  if (productName) {
-    input.value = productName;
-    input.readOnly = true;
+  // عرض الصورة
+  if (imageName) {
+    const imageTag = document.querySelector(".product-image img");
+    imageTag.src = "images/" + imageName;
+  }
+
+  // عرض نوع الحقيبة تلقائيًا في الحقل
+  if (productType) {
+    const productInput = document.getElementById("product");
+    productInput.value = "حقيبة " + productType;
   }
 </script>
 

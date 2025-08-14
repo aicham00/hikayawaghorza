@@ -4,47 +4,63 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ألعاب قماشية | حكاية وغرزة</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <header>
-    <h1>🧸 ألعاب قماشية</h1>
+  <header class="main-header">
+    <div class="logo">
+      <i class="fas fa-puzzle-piece"></i>
+      <h1>ألعاب قماشية</h1>
+    </div>
     <nav>
-      <ul>
+      <ul class="nav-links">
         <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="store.html">المتجر</a></li>
+        <li><a href="store.html" class="active">المتجر</a></li>
         <li><a href="videos.html">الفيديوهات</a></li>
         <li><a href="contact.html">تواصل</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section class="product-grid">
-      <!-- لعبة 1 -->
-      <div class="product-card">
-        <img src="https://via.placeholder.com/300x200.png?text=لعبة+1" alt="دمية قماشية" />
-        <h3>ملابس دمية قماشية</h3>
-        <p>آمنة للأطفال، مصنوعة من القطن ومناسبة للهدية.</p>
-        <a href="contact.html" class="btn">اطلب الآن</a>
+  <main class="category-main">
+    <section class="category-intro">
+      <h2>🧸 ألعاب قماشية آمنة ومحبوبة</h2>
+      <p>مصنوعة يدويًا بمواد آمنة ومناسبة للأطفال، مثالية كهدية 💕</p>
+      <p>✨ نصنع إبداعاتنا خصيصًا لكِ — استقبل طلباتكِ حسب المقاس والتصميم الذي تحلمين به. 🧵💖</p>
+    </section>
+
+    <section class="product-cards">
+      <div class="product-card modern-card">
+        <div class="product-image">
+          <img src="https://via.placeholder.com/250x250.png?text=دمية+1" alt="دمية 1">
+        </div>
+        <h4>دمية أرنب قماشية</h4>
+        <p class="price">السعر: 1500 دج</p>
+        <p>ألوان ناعمة وخياطة آمنة للأطفال من عمر سنة.</p>
+         <div class="quantity-selector">
+          <button type="button" onclick="decreaseQuantity(this)">-</button>
+          <input type="number" value="1" min="1" class="quantity-input" readonly>
+          <button type="button" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <a href="order.html" target="_blank" class="btn" onclick="submitOrder(this)">اطلبي الآن</a>
       </div>
 
-      <!-- لعبة 2 -->
-      <div class="product-card">
-        <img src="https://via.placeholder.com/300x200.png?text=لعبة+2" alt="وسادة لعبة" />
-        <h3>وسادة لعب للأطفال</h3>
-        <p>شكل لطيف وألوان مبهجة تناسب الصغار.</p>
-        <a href="contact.html" class="btn">اطلب الآن</a>
-      </div>
-
-      <!-- لعبة 3 -->
-      <div class="product-card">
-        <img src="https://via.placeholder.com/300x200.png?text=لعبة+3" alt="عروسة قماش" />
-        <h3>خيمة للأطـفال</h3>
-        <p>تصميم يدوي خاص بلمسة تقليدية.</p>
-        <a href="contact.html" class="btn">اطلب الآن</a>
+      <div class="product-card modern-card">
+        <div class="product-image">
+          <img src="https://via.placeholder.com/250x250.png?text=دمية+2" alt="دمية 2">
+        </div>
+        <h4>دمية دب صغير</h4>
+        <p class="price">السعر: 1700 دج</p>
+        <p>مناسبة للتزيين أو كرفيق نوم للأطفال.</p>
+         <div class="quantity-selector">
+          <button type="button" onclick="decreaseQuantity(this)">-</button>
+          <input type="number" value="1" min="1" class="quantity-input" readonly>
+          <button type="button" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <a href="order.html" target="_blank" class="btn" onclick="submitOrder">اطلبي الآن</a>
       </div>
     </section>
   </main>

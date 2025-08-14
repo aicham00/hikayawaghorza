@@ -4,54 +4,147 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>حقائب اليد | حكاية وغرزة</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <header>
-    <h1>🎒 حقائب اليد</h1>
+  <header class="main-header">
+    <div class="logo">
+      <i class="fas fa-handbag"></i>
+      <h1>حقائب اليد</h1>
+    </div>
     <nav>
-      <ul>
+      <ul class="nav-links">
         <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="store.html">المتجر</a></li>
+        <li><a href="store.html" class="active">المتجر</a></li>
         <li><a href="videos.html">الفيديوهات</a></li>
         <li><a href="contact.html">تواصل</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section class="product-grid">
-      <!-- المنتج 1 -->
-      <div class="product-card">
-        <img src="images/bag1.jpg?text=حقيبة يد+1" alt="تطريز 2" />
-        <h3>حقيبة يد كروشيه </h3>
-        <p>حقيبة مميزة بخيوط قطنية .</p>
-        <a href="order.html?product=حقيـبة يد كروشيه " class="btn">اطلب الآن</a>
+  <main class="category-main">
+    <section class="category-intro">
+      <h2>👜 حقائب يد مطرزة</h2>
+      <p>حقائب يدوية تعكس ذوقك وأناقتك، مزيج بين التراث واللمسة العصرية</p>
+      <p>✨ نصنع إبداعاتنا خصيصًا لكِ — استقبل طلباتكِ حسب المقاس والتصميم الذي تحلمين به. 🧵💖</p>
+    </section>
+
+    <section class="product-cards">
+      <div class="product-card modern-card">
+        <div class="product-image">
+          <img src="images/sac.jpg" alt="حقيبة 1">
+        </div>
+        <h4>حقيبة كانفا</h4>
+        <p class="price">السعر: 2500 دج</p>
+        <p>حقيبة بتصميم أنيق.</p>
+        <p style="margin: 10px 0;">متوفرة في الألوان التـالية 🧵 </p>
+        <div class="color-options" id="colorOptions">
+          <span class="color-swatch" data-color="بنفسجي" style="background-color: violet;"></span>
+          <span class="color-swatch" data-color="أسود"style="background-color:black ;"></span>
+          <span class="color-swatch" data-color="أحمر"style="background-color: red ;"></span>
+        </div>
+        <input type="hidden" id="selectedColor" value="">
+        <div class="quantity-selector">
+          <button type="button" onclick="decreaseQuantity(this)">-</button>
+          <input type="number" value="1" min="1" class="quantity-input" readonly>
+          <button type="button" onclick="increaseQuantity(this)">+</button>
+        </div>
+
+        <a href="order.html" type=كروشيه&images/sac.jpg class="btn" onclick="submitOrder(this)">اطلبي الآن</a>
+
+        <p id="order-feedback" style="margin-top: 10px;"></p>
       </div>
 
-      <!-- المنتج 2 -->
-      <div class="product-card">
-        <img src="https://via.placeholder.com/300x200.png?text=حقيبة+2" alt="حقيبة يد 2" />
-        <h3>حقيبة يد للبنات</h3>
-        <p>بتطريز ناعم وألوان جذابة مناسبة للمدرسة أو النزهات.</p>
-        <a href="order.html?product=" class="btn">اطلب الآن</a>
+      <div class="product-card modern-card">
+        <div class="product-image">
+          <img src="images/bagcrochet.png" alt="حقيبة 2">
+        </div>
+        <h4>حقيبة كروشيه</h4>
+        <p class="price">السعر: 2500 دج</p>
+        <p>حقيبة كروشيه بتصميم أنيق</p>
+        <p style="margin: 10px 0;">متوفرة في الألوان التـالية 🧵 </p>
+        <div class="color-options">
+          <span class="color-swatch" style="background-color: violet;"></span>
+          <span class="color-swatch" style="background-color: black;"></span>
+          <span class="color-swatch" style="background-color: red;"></span>
+        </div>
+         <div class="quantity-selector">
+          <button type="button" onclick="decreaseQuantity(this)">-</button>
+          <input type="number" value="1" min="1" class="quantity-input" readonly>
+          <button type="button" onclick="increaseQuantity(this)">+</button>
+        </div>
+
+        <a href="order.html" target="_blank" class="btn">اطلب الآن</a>
       </div>
 
-      <!-- المنتج 3 -->
-      <div class="product-card">
-        <img src="https://via.placeholder.com/300x200.png?text=حقيبة+3" alt="حقيبة يد 3" />
-        <h3>حقيبة يد صغيرة</h3>
-        <p>مصنوعة يدويًا بدقة وخيط عالي الجودة.</p>
-        <a href="order.html?product=" class="btn">اطلب الآن</a>
+      <div class="product-card modern-card">
+        <div class="product-image">
+          <img src="images/bag-embroid..jpg" alt="حقيبة 3">
+        </div>
+        <script>
+          function changeMainImage(el) {
+            document.getElementById("main-img").src = el.src;
+          }
+        </script>
+        <h4>حقيبة مطرزة للعروس</h4>
+        <p class="price">السعر: 2500 دج</p>
+        <p>حقيبة مطرزة للعروس بتصميم أنيق.</p>
+        <p style="margin: 10px 0;">متوفرة في الألوان التـالية 🧵 </p>
+        <div class="color-options" id="colorOptions">
+          <span class="color-swatch" style="background-color: #002366;"></span>
+          <span class="color-swatch" style="background-color: black;"></span>
+          <span class="color-swatch" style="background-color: red ;"></span>
+          <span class="color-swatch" style="background-color: #556b2f;"></span>
+          <span class="color-swatch" style="background-color: #800020;"></span>
+          
+        </div>
+        <input type="hidden" id="selectedColor" value="">
+        <div class="quantity-selector">
+          <button type="button" onclick="decreaseQuantity(this)">-</button>
+          <input type="number" value="1" min="1" class="quantity-input" readonly>
+          <button type="button" onclick="increaseQuantity(this)">+</button>
+        </div>
+
+        <a href="order.html" type=حقيبةعروس images/bag-embroid..jpg class="btn" onclick="submitOrder(this)">اطلبي الآن</a>
+
+        <p id="order-feedback" style="margin-top: 10px;"></p>
       </div>
+
+      
+
+      <!-- أضيفي المزيد حسب الحاجة -->
     </section>
   </main>
 
   <footer>
     <p>© 2025 حكاية وغرزة | جميع الحقوق محفوظة</p>
   </footer>
+
+  <script>
+function increaseQuantity(button) {
+  const input = button.parentElement.querySelector('.quantity-input');
+  let value = parseInt(input.value);
+  input.value = value + 1;
+}
+
+function decreaseQuantity(button) {
+  const input = button.parentElement.querySelector('.quantity-input');
+  let value = parseInt(input.value);
+  if (value > 1) {
+    input.value = value - 1;
+  }
+}
+
+// مثال: عند الضغط على زر الطلب
+function submitOrder(btn) {
+  const card = btn.closest('.product-card');
+  const quantity = card.querySelector('.quantity-input').value;
+  alert(`✅ تم إضافة ${quantity} قطعة إلى الطلب`);
+}
+</script>
 
 </body>
 </html>

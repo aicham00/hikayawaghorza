@@ -10,37 +10,45 @@
 </head>
 <body>
 
-  <!-- ✅ شريط ترحيبي -->
+  <!-- ✅ شريط ترحيبي ديناميكي -->
   <div class="top-banner">
-    ✨ مرحبًا بكِ في <strong>حكاية وغرزة</strong> – حيث تُحاك الحكايات بالخيط والغرز 💫
+    <marquee behavior="scroll" direction="right" scrollamount="5">
+      ✨ مرحبًا بكِ في <strong>حكاية وغرزة</strong> – حيث تُحاك الحكايات بالخيط والغرز 💫
+    </marquee>
   </div>
-
-  <!-- ✅ الهيدر -->
-  <header>
-    <h1>حكاية وغرزة</h1>
+  <header class="main-header">
+    <div class="logo">
+      <i class="fas fa-needle"></i>
+      <h1>حكاية وغرزة</h1>
+    </div>
     <nav>
       <ul>
-        <li><a href="index.html" class="active">الرئيسية</a></li>
+        <li><a href="index.html">الرئيسية</a></li>
         <li><a href="store.html">المتجر</a></li>
-        <li><a href="videos.html">الفيديوهات</a></li>
+        <li><a href="about.html">عن المشروع</a></li>
         <li><a href="contact.html">تواصل</a></li>
-        <li><a href="seasonal.html">المنتجات الموسمية</a></li>
+        <li><a href="seasonal.html">المنتجات الموسـمية</a></li>
         <li><a href="reviews.html">آراء الزبونات</a></li>
       </ul>
     </nav>
   </header>
-
   <!-- ✅ محتوى رئيسي -->
   <main class="home-main">
     <section class="hero">
       <h2>🌸 الغرزة التي تروي حكاية</h2>
       <p>نُحيك بلمسة فنية قصصًا من تراثنا الجزائري العريق، ونحوّلها إلى منتجات يدوية بكل حبّ.</p>
+      <p>✨ نصنع إبداعاتنا خصيصًا لكِ — استقبل طلباتكِ حسب المقاس والتصميم الذي تحلمين به. 🧵💖</p>
       <a href="store.html" class="btn">تصفحي المتجر</a>
     </section>
 
     <section class="intro-section">
       <h3>🧶 ماذا نقدم؟</h3>
-      <p>منتجات يدوية: حقائب، أساور، تطريزات، ألعاب قماشية، قطع ديكور تراثية، توزيعات للمناسبات والمزيد</p>
+      <ul>
+        <li>حقائب يد مطرزة</li>
+        <li>أساور قماشية فريدة</li>
+        <li>ألعاب وملابس الدمى</li>
+        <li>قطع زينة تراثية</li>
+      </ul>
       <p>كل قطعة تُصنع بعناية، وتحمل روح الحكاية في تفاصيلها 🌺</p>
     </section>
 
@@ -49,40 +57,77 @@
       <p>تصميم مستوحى من الزخارف الصحراوية التقليدية، يجمع بين الأناقة والبساطة.</p>
       <p><a href="https://www.facebook.com/YourPage" target="_blank">تابعي صفحتنا لاكتشافها</a></p>
     </section>
+
+    <section class="featured-products">
+      <h3>🧵 منتجات مختارة</h3>
+      <div class="product-cards">
+        <div class="product-card">
+          <img src="images/bag-embroid..jpg" alt="حقيبةعروس مطرزة>
+          <h4>حقيبةعروس مطرزة</h4>
+        </div>
+        <div class="product-card">
+          <img src="images/bagcrochet.png" alt="حقيبة كروشيه">
+          <h4>حقيبة كروشيه</h4>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <section class="counter-section">
-  <h2>📌 أُنجزت حتى الآن</h2>
-  <p><strong>+35</strong> غرزة تحمل حكاية</p>
-</section>
-<section class="map-section">
-  <h2>📍 وصلتنا طلبات من:</h2>
-  <ul>
-    <li>الجزائر العاصمة</li>
-    <li>قسنطينة</li>
-    <li>سطيف</li>
-    <li>ورقلة</li>
-    <li>تيارت</li>
-    <li>بـوسعـادة</li>
-  </ul>
-</section>
 
-<section class="weekly-pick">
-  <h2>🧺 سلة الغرزة</h2>
-  <div class="product-grid">
-
-    <div class="product-card">
-      <img src="https://via.placeholder.com/300x200.png?text=منتج+1" alt="منتج 1"/>
-      <h3>حقيبة يد مطرزة</h3>
-      <p>بتطريز عصري مستوحى من التراث.</p>
-      <a href="contact.html" class="btn">اطلب الآن</a>
-    </div>
-
-  <!-- ✅ فوتر -->
+  <!-- ✅ الفوتر -->
   <footer>
     <p>© 2025 حكاية وغرزة | جميع الحقوق محفوظة</p>
     <p>📧 <a href="mailto:hikayaghorza@gmail.com">hikayaghorza@gmail.com</a></p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/hikayaghorza/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61578387332766" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    </div>
   </footer>
+<!-- Firebase SDK -->
+  <script type="module">
+    // استيراد Firebase
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
 
+    // بيانات مشروعك من Firebase Console
+    const firebaseConfig = {
+      apiKey: "AIzaSyD9IV4OY10BqRRmW5ZetF-cNTF_8wZsEF4",
+      authDomain: "taleandstitch.firebaseapp.com",
+      projectId: "taleandstitch",
+      storageBucket: "taleandstitch.appspot.com",
+      messagingSenderId: "589312061871",
+      appId: "1:589312061871:web:82acc6564ce59973107f5a"
+    };
+
+    // تهيئة Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // عند إرسال النموذج
+    const orderForm = document.getElementById("orderForm");
+    orderForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const wilaya= document.getElementById("wilaya").value;
+      const product = document.getElementById("product").value;
+
+      try {
+        await addDoc(collection(db, "orders"), {
+          name: name,
+          phone: phone,
+          wilaya: wilaya,
+          product: product,
+          createdAt: serverTimestamp()
+        });
+        alert("✅ تم إرسال الطلب بنجاح!");
+        orderForm.reset();
+      } catch (error) {
+        alert("❌ حدث خطأ أثناء الإرسال: " + error.message);
+      }
+    });
+  </script>
 </body>
 </html>
+
